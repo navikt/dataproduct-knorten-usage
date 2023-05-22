@@ -3,7 +3,7 @@ kind: Naisjob
 metadata:
   labels:
     team: nada
-  name: dataproduct-target-group
+  name: datatransfer-knorten
   namespace: nada
 spec:
   image: {{ image }}
@@ -15,5 +15,5 @@ spec:
   gcp:
     bigQueryDatasets:
     - description: Metrikker på konsum av dataprodukter
-      name: platform_users
+      name: knorten_usage
       permission: READWRITE

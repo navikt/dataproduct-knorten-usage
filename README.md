@@ -1,2 +1,2 @@
-# Om dataproduktet
-Dataproduktet inneholder informasjon om team i målgruppa for deling av data: Team med apper og datateam.
+# Om repoet
+Naisjoben brukes til å flytte data mellom datasett i ulike regioner i GCP.

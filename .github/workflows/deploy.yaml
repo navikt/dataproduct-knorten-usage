@@ -1,4 +1,4 @@
-name: Deploy dataproduct target group
+name: Deploy data transfer Knorten
 
 on: push
 
