@@ -10,8 +10,8 @@ def run_transfer():
     table_dict = {"notebook_usage": df_notebook_usage,
                   "knorten_users": df_users}
 
-    client = bigquery.Client()
-   
+    client = bigquery.Client(project="nada-prod-6977")
+
 
     project, dataset = "nada-prod-6977", "knorten_usage"
     for table in table_dict:
