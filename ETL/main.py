@@ -11,6 +11,7 @@ def run_transfer():
                   "knorten_users": df_users}
 
     client = bigquery.Client()
+   
 
     project, dataset = "nada-prod-6977", "knorten_usage"
     for table in table_dict:
