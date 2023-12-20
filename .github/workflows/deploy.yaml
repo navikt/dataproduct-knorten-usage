@@ -8,6 +8,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+        id-token: write
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -24,6 +26,5 @@ jobs:
     - name: Deploy to prod-gcp
       uses: nais/deploy/actions/deploy@master
       env:
-        APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
         CLUSTER: prod-gcp
         RESOURCE: .nais/naisjob.yaml,.nais/alert.yaml
