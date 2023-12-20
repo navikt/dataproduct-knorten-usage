@@ -1,6 +1,9 @@
 name: Deploy data transfer Knorten
 
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 env:
   IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
