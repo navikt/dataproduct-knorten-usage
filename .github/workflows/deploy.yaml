@@ -24,7 +24,7 @@ jobs:
         docker build . --pull --tag ${IMAGE}
         docker push ${IMAGE}
     - name: Deploy to prod-gcp
-      uses: nais/deploy/actions/deploy@master
+      uses: nais/deploy/actions/deploy@v2
       env:
         CLUSTER: prod-gcp
         RESOURCE: .nais/naisjob.yaml,.nais/alert.yaml
