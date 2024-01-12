@@ -9,11 +9,23 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      gh:
+        patterns:
+          - '*'
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      pip:
+        patterns:
+          - '*'
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      docker:
+        patterns:
+          - '*'
