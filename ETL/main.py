@@ -1,11 +1,12 @@
 import pandas as pd
+import pandas_gbq
 from google.cloud import bigquery
 
 
 def run_transfer():
 
-    df_notebook_usage = pd.read_gbq('SELECT * FROM `knada-gcp.knorten.stderr_202*`', project_id="nada-prod-6977")
-    df_users = pd.read_gbq('SELECT * FROM `knada-gcp.knorten.metrics_raw`', project_id="nada-prod-6977")
+    df_notebook_usage = pandas_gbq.read_gbq('SELECT * FROM `knada-gcp.knorten.stderr_202*`', project_id="nada-prod-6977")
+    df_users = pandas_gbq.read_gbq('SELECT * FROM `knada-gcp.knorten.metrics_raw`', project_id="nada-prod-6977")
 
     table_dict = {"notebook_usage": df_notebook_usage,
                   "knorten_users": df_users}
