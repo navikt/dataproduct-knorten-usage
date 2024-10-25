@@ -1,13 +1,18 @@
-FROM python:3.13-slim
+FROM cgr.dev/chainguard/python:latest-dev AS builder
 
-RUN pip install --upgrade pip
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
 
-WORKDIR /app/ETL
+RUN python3 -m venv venv
+ENV PATH=/app/venv/bin:$PATH
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+FROM cgr.dev/chainguard/python:latest AS runner
+
+WORKDIR /app
+
 COPY ETL/main.py .
+COPY --from=builder /app/venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
 
-RUN groupadd --system --gid 1069 apprunner
-RUN useradd --system --uid 1069 --gid apprunner apprunner
-
-CMD ["python", "main.py"]
+ENTRYPOINT ["python", "main.py"]
