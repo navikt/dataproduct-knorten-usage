@@ -1,4 +1,4 @@
 google-cloud-bigquery==3.27.0
 pandas==2.2.3
-pandas-gbq==0.25.0
+pandas-gbq==0.26.0
 tqdm==4.67.1
